@@ -4,8 +4,8 @@
     --border-color: rgba(255, 255, 255, 0.3);
     --text-color: #ffffff;
     --cell-bg: rgba(255, 255, 255, 0.8);
-    --x-color: #FF5E78; /* ��� */
-    --o-color: #4ECCA3; /* ��R� */
+    --x-color: #FF5E78; /* 漂亮的粉紅 */
+    --o-color: #4ECCA3; /* 漂亮的青綠 */
 }
 
 body {
@@ -17,13 +17,13 @@ body {
     align-items: center;
     background: var(--bg-gradient);
     color: var(--text-color);
-    overflow: hidden; /* 2br� */
+    overflow: hidden; /* 防止捲動 */
 }
 
-/* J2;�hۻ�H� */
+/* 遊戲主容器：毛玻璃效果 */
 .container {
     background: var(--glass-bg);
-    backdrop-filter: blur(10px); /* !��o */
+    backdrop-filter: blur(10px); /* 模糊背景 */
     padding: 2rem;
     border-radius: 20px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -43,7 +43,7 @@ h1 {
     min-height: 1.5em;
 }
 
-/* ��H@ */
+/* 棋盤佈局 */
 .board {
     display: grid;
     grid-template-columns: repeat(3, 125px);
@@ -52,7 +52,7 @@ h1 {
     margin: 0 auto;
 }
 
-/* <P# */
+/* 格子樣式 */
 .cell {
     background-color: var(--cell-bg);
     border-radius: 15px;
@@ -66,22 +66,21 @@ h1 {
                 inset -5px -5px 10px rgba(255,255,255,0.8);
     transition: all 0.2s ease;
     color: #333;
-    user-select: none; /* 2b�W�x� */
+    user-select: none; /* 防止文字被選取 */
 }
 
-/* UX: � �
-��H� */
+/* UX: 滑鼠移上去的效果 */
 .cell:hover {
     transform: translateY(-2px);
     background-color: #fff;
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-/* X � O �lOr */
+/* X 和 O 的專屬顏色 */
 .cell.x { color: var(--x-color); }
 .cell.o { color: var(--o-color); }
 
-/* ��k */
+/* 下棋動畫 */
 .pop-in {
     animation: pop 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
@@ -92,9 +91,9 @@ h1 {
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* �)#ڄخ# */
+/* 勝利連線的高亮樣式 */
 .cell.winner {
-    background-color: #FFD700; /* �r */
+    background-color: #FFD700; /* 金色 */
     color: #fff;
     animation: glow 1s infinite alternate;
 }
@@ -104,7 +103,7 @@ h1 {
     to { box-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700; }
 }
 
-/* 	# */
+/* 按鈕樣式 */
 .btn-reset {
     margin-top: 25px;
     padding: 10px 25px;
@@ -124,7 +123,7 @@ h1 {
     transform: scale(0.95);
 }
 
-/* [��] �h */
+/* [新增] 計分板容器 */
 .scoreboard {
     display: flex;
     justify-content: center;
@@ -133,7 +132,7 @@ h1 {
     width: 100%;
 }
 
-/* %x�P */
+/* 個別分數盒子 */
 .score-box {
     background: rgba(255, 255, 255, 0.25);
     padding: 10px 15px;
@@ -158,7 +157,7 @@ h1 {
     font-weight: 800;
 }
 
-/* [��] �a�Or�� */
+/* [新增] 針對不同對象的顏色微調 */
 .x-score { color: var(--x-color); border-bottom: 3px solid var(--x-color); }
 .o-score { color: var(--o-color); border-bottom: 3px solid var(--o-color); }
 .draw-score { color: #fff; border-bottom: 3px solid #ddd; }
